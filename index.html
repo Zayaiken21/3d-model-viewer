@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>VOXELIA Food 3D Library</title>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
+<style>
+:root{--bg:#08111f;--panel:#111d2f;--panel2:#172942;--text:#f6fbff;--muted:#99afc8;--accent:#36a7ff;--line:#28435f}
+*{box-sizing:border-box} html,body{margin:0;background:radial-gradient(circle at 20% -10%,#18365b 0,#08111f 45%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100%}
+header{position:sticky;top:0;z-index:10;padding:18px 20px;border-bottom:1px solid var(--line);background:#08111fe8;backdrop-filter:blur(14px);display:flex;gap:14px;align-items:center;justify-content:space-between}
+.brand h1{margin:0;font-size:clamp(21px,4vw,34px);letter-spacing:.08em} .brand p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.badge{padding:8px 12px;border:1px solid #3d6688;border-radius:999px;background:#10233a;font-size:12px;font-weight:800;white-space:nowrap}
+main{max-width:1500px;margin:auto;padding:18px} .hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:16px;margin-bottom:18px}
+.viewer{background:linear-gradient(145deg,#10233a,#0b1726);border:1px solid var(--line);border-radius:22px;overflow:hidden;min-height:420px;position:relative} #mainViewer{width:100%;height:520px;background:radial-gradient(circle,#233e5a 0,#0d1827 70%)}
+.info{background:linear-gradient(145deg,#152841,#0c1929);border:1px solid var(--line);border-radius:22px;padding:24px;display:flex;flex-direction:column;justify-content:center} .eyebrow{color:#70c3ff;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:900} #selectedName{font-size:clamp(34px,6vw,62px);margin:10px 0 4px;line-height:.95} #selectedId{color:var(--muted)} .tip{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);color:#bfd0df;line-height:1.55}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:12px} .card{appearance:none;text-align:left;color:inherit;border:1px solid var(--line);background:linear-gradient(150deg,#13243a,#0d1828);border-radius:18px;overflow:hidden;padding:0;cursor:pointer;transition:.18s transform,.18s border-color,.18s box-shadow} .card:hover,.card.active{transform:translateY(-2px);border-color:#4eb7ff;box-shadow:0 10px 28px #0007} .card model-viewer{width:100%;height:170px;background:radial-gradient(circle,#203c59,#0c1625 70%);pointer-events:none} .meta{padding:12px 13px 14px;display:flex;flex-direction:column;gap:3px} .meta strong{font-size:15px} .meta span{font-size:11px;color:var(--muted)}
+footer{color:var(--muted);text-align:center;padding:24px 16px 35px;font-size:12px}
+@media(max-width:800px){.hero{grid-template-columns:1fr}#mainViewer{height:48vh;min-height:320px}.info{padding:18px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card model-viewer{height:145px}}
+@media(max-width:540px) and (orientation:landscape){header{padding:8px 12px}.brand p{display:none}main{padding:10px}.hero{grid-template-columns:1.2fr .8fr}#mainViewer{height:68vh;min-height:250px}.info{padding:14px}#selectedName{font-size:28px}.tip{font-size:12px;margin-top:12px;padding-top:10px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.card model-viewer{height:100px}}
+</style></head><body>
+<header><div class="brand"><h1>VOXELIA FOOD 3D</h1><p>17 actual GLB game assets · interactive HTML preview</p></div><div class="badge">GLB + GitHub Pages Ready</div></header>
+<main><section class="hero"><div class="viewer"><model-viewer id="mainViewer" src="models/sunberry-4096.glb" camera-controls auto-rotate shadow-intensity="1.2" exposure="1.15" ar ar-modes="webxr scene-viewer quick-look"></model-viewer></div><aside class="info"><div class="eyebrow">Selected asset</div><h2 id="selectedName">Sunberry</h2><div id="selectedId">Catalogue #4096</div><div class="tip">Drag to rotate, pinch or scroll to zoom. Every card below loads a separate real <strong>.glb</strong> model file. Put this whole folder on GitHub Pages and keep the <code>models/</code> folder beside <code>index.html</code>.</div></aside></section>
+<section class="grid"><button class="card" data-src="models/sunberry-4096.glb" data-name="Sunberry" data-id="4096">
+  <model-viewer src="models/sunberry-4096.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Sunberry</strong><span>#4096 · GLB</span></div>
+</button>
+<button class="card" data-src="models/thornpear-4097.glb" data-name="Thornpear" data-id="4097">
+  <model-viewer src="models/thornpear-4097.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Thornpear</strong><span>#4097 · GLB</span></div>
+</button>
+<button class="card" data-src="models/frostcap-4098.glb" data-name="Frostcap" data-id="4098">
+  <model-viewer src="models/frostcap-4098.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Frostcap</strong><span>#4098 · GLB</span></div>
+</button>
+<button class="card" data-src="models/emberbulb-4099.glb" data-name="Emberbulb" data-id="4099">
+  <model-viewer src="models/emberbulb-4099.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Emberbulb</strong><span>#4099 · GLB</span></div>
+</button>
+<button class="card" data-src="models/lumenspore-4100.glb" data-name="Lumenspore" data-id="4100">
+  <model-viewer src="models/lumenspore-4100.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Lumenspore</strong><span>#4100 · GLB</span></div>
+</button>
+<button class="card" data-src="models/cragmoss-4101.glb" data-name="Cragmoss" data-id="4101">
+  <model-viewer src="models/cragmoss-4101.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Cragmoss</strong><span>#4101 · GLB</span></div>
+</button>
+<button class="card" data-src="models/kelpfruit-4102.glb" data-name="Kelpfruit" data-id="4102">
+  <model-viewer src="models/kelpfruit-4102.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Kelpfruit</strong><span>#4102 · GLB</span></div>
+</button>
+<button class="card" data-src="models/tidefruit-4103.glb" data-name="Tidefruit" data-id="4103">
+  <model-viewer src="models/tidefruit-4103.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Tidefruit</strong><span>#4103 · GLB</span></div>
+</button>
+<button class="card" data-src="models/reefberry-4104.glb" data-name="Reefberry" data-id="4104">
+  <model-viewer src="models/reefberry-4104.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Reefberry</strong><span>#4104 · GLB</span></div>
+</button>
+<button class="card" data-src="models/jungleplum-4105.glb" data-name="Jungleplum" data-id="4105">
+  <model-viewer src="models/jungleplum-4105.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Jungleplum</strong><span>#4105 · GLB</span></div>
+</button>
+<button class="card" data-src="models/grain-4176.glb" data-name="Grain" data-id="4176">
+  <model-viewer src="models/grain-4176.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Grain</strong><span>#4176 · GLB</span></div>
+</button>
+<button class="card" data-src="models/banana-4177.glb" data-name="Banana" data-id="4177">
+  <model-viewer src="models/banana-4177.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Banana</strong><span>#4177 · GLB</span></div>
+</button>
+<button class="card" data-src="models/mango-4179.glb" data-name="Mango" data-id="4179">
+  <model-viewer src="models/mango-4179.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Mango</strong><span>#4179 · GLB</span></div>
+</button>
+<button class="card" data-src="models/coconut-4179b.glb" data-name="Coconut" data-id="4179B">
+  <model-viewer src="models/coconut-4179b.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Coconut</strong><span>#4179B · GLB</span></div>
+</button>
+<button class="card" data-src="models/bread-4180.glb" data-name="Bread" data-id="4180">
+  <model-viewer src="models/bread-4180.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Bread</strong><span>#4180 · GLB</span></div>
+</button>
+<button class="card" data-src="models/fruit-bowl-4181.glb" data-name="Fruit Bowl" data-id="4181">
+  <model-viewer src="models/fruit-bowl-4181.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Fruit Bowl</strong><span>#4181 · GLB</span></div>
+</button>
+<button class="card" data-src="models/jungleplum-4190.glb" data-name="Jungleplum" data-id="4190">
+  <model-viewer src="models/jungleplum-4190.glb" camera-controls disable-zoom interaction-prompt="none" shadow-intensity="1" exposure="1.1" loading="lazy"></model-viewer>
+  <div class="meta"><strong>Jungleplum</strong><span>#4190 · GLB</span></div>
+</button></section></main><footer>VOXELIA · Food asset package · 17 models</footer>
+<script>
+const main=document.querySelector('#mainViewer'), nameEl=document.querySelector('#selectedName'), idEl=document.querySelector('#selectedId');
+const cards=[...document.querySelectorAll('.card')]; cards[0].classList.add('active');
+cards.forEach(card=>card.addEventListener('click',()=>{cards.forEach(c=>c.classList.remove('active'));card.classList.add('active');main.src=card.dataset.src;nameEl.textContent=card.dataset.name;idEl.textContent='Catalogue #'+card.dataset.id;document.querySelector('.hero').scrollIntoView({behavior:'smooth',block:'start'})}));
+</script></body></html>
